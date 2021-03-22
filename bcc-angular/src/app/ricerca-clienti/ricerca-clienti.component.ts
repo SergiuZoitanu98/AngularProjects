@@ -13,22 +13,27 @@ export class RicercaClientiComponent implements OnInit {
   url = environment.baseUrl;
   constructor(private clientService:RicercaClientiService , private router: Router,
     private route: ActivatedRoute, private http:HttpClient) { }
-  clients: [{
-    filiale: '',
-    nag: '',
-    nome: '',
-    dataNascita:''
-  }]
- 
-  findClients() {
-    const params = new HttpParams().set('nag', '1').set('branch', '1');
-    this.clientService.cerca(params);
+  clients:{
+    branch;
+    nag;
+    nome;
+    dataNascita;
   }
+ 
+  
 
   ngOnInit() {
-    
+    this.clients ={
+      branch:"",
+      nag:"",
+      nome:"",
+      dataNascita:""
+    }
   }
-    
+  findClients() {
+    const params = new HttpParams().set('nag', this.clients.nag).set('branch', this.clients.branch);
+    this.clientService.cerca(params);
+  }
   }
 
 
