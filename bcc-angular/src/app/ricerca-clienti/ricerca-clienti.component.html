@@ -1,18 +1,20 @@
 <h2 class="ml-4 mt-4">Ricerca clienti</h2>
+<div class="container">
 <div class="row">
-  
-    <div class="col-md-6 offset-md-3">
       <form action="" class="form-group form-inline " >
-       <select name="" id="" class="form-control" [(ngModel)]="clients.branch"  name="branch">
-          <option value="1">Seleziona filiale</option>
+       <select name="" id="" class="form-control"  [(ngModel)]="filiali.branch"   name="branch">
+          <option  value="1">mata-1 </option>
+          <option value="2">mata-1 </option>
+          <option value="3">mata-1 </option>
+        
         </select>
-     
         <input type="text" [(ngModel)]="clients.nag" name="nag" placeholder="NAG" class="form-control ml-4"/>
         <input type="text" [(ngModel)]="clients.nome" name="nome"  placeholder="Nome" class="form-control ml-4"/>
         <input type="date" [(ngModel)]="clients.dataNascita" name="dataNascita" placeholder="Data Di Nascita" class="form-control ml-4"/>
         <button class="btn btn-primary ml-2" (click)="findClients()">Cerca Clienti</button>
       </form>
+      <ul>
       
-    
-  </div>
+      </ul>
+    </div>
 </div>

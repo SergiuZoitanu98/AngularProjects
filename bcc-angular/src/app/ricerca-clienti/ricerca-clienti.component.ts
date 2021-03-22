@@ -12,28 +12,37 @@ import { environment } from "src/environments/environment";
 export class RicercaClientiComponent implements OnInit {
   url = environment.baseUrl;
   constructor(private clientService:RicercaClientiService , private router: Router,
-    private route: ActivatedRoute, private http:HttpClient) { }
-  clients:{
+    private route: ActivatedRoute, private http: HttpClient) { }
+   branches: {};
+  
+  
+  filiali: {
     branch;
+  }
+  
+  clients:{
     nag;
     nome;
     dataNascita;
   }
- 
-  
-
   ngOnInit() {
-    this.clients ={
-      branch:"",
-      nag:"",
-      nome:"",
-      dataNascita:""
+    this.clients = {
+      nag: "",
+      nome: "",
+      dataNascita: ""
     }
+    this.filiali = {
+      branch:"",
+    }
+    let b;
+    b = this.clientService.getFiliali();
+    
   }
+
   findClients() {
-    const params = new HttpParams().set('nag', this.clients.nag).set('branch', this.clients.branch);
+    const params = new HttpParams().set('nag', this.clients.nag).set('branch', this.filiali.branch);
     this.clientService.cerca(params);
-  }
+   }
   }
 
 

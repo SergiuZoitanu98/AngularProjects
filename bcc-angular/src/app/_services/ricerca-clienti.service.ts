@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { environment } from "src/environments/environment";
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { Router } from "@angular/router";
-import { map } from "rxjs/operators";
+
 @Injectable({
     providedIn: "root",
 })
@@ -29,5 +29,11 @@ export class RicercaClientiService {
                     console.log(result)
                 })
             );
+    }
+    getFiliali() {
+        let url = this.url + "/api/v1/branch-search"
+        return this.http.get<any>(url).subscribe((result:[]) => {
+            console.log(result)
+        })
     }
 }
