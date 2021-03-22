@@ -4,10 +4,11 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { LoginComponent } from "./login/login.component";
 import { AuthGuardService } from "./_guards/auth-guard.service";
+import { RicercaClientiComponent } from "./ricerca-clienti/ricerca-clienti.component";
 
 const routes: Routes = [
   { path: "", canActivate: [AuthGuardService],component:HomeComponent },
-  { path: "home", canActivate: [AuthGuardService],component:HomeComponent },
+  { path: "ricerca-clienti", canActivate: [AuthGuardService],component:RicercaClientiComponent },
   { path: "login", component: LoginComponent },
 ];
 
