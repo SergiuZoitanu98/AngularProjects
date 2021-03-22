@@ -1,0 +1,83 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Two way binding  banana in the box --[()]
+<input type="text" [(ngModel)]="email" (keyup.enter)=" onKeyUp()" class="form control">
+-->
+
+
+<!--<button (click)="onAdd()"class="btn-primary">add</button> <!--Change detection
+
+<ul>
+    <li *ngFor="let course of courses; even as isEven">
+    {{course.name}}
+    <button class="btn-danger" (click)="onRemove(course)">Remove</button>
+    <button class="btn-warning" (click)="onChange(course)">Change Name</button>
+
+    <span *ngIf="isEven">even</span>
+    </li>
+
+</ul>
+https://angular.io/api/common/NgForOf-->
+
+
+
+<!--ngSwitchCase-->
+<!--<ul class="nav nav-pills">
+    <li [class.active]="viewMode == 'map'"><a (click)="viewMode = 'map'" class="ml-2">MapView</a></li>
+    <li [class.active]="viewMode == 'list'"><a  (click)="viewMode = 'list'" class="ml-2">ListView</a></li>
+    <div [ngSwitch]="viewMode"> 
+        <div *ngSwitchCase="'map'" class="ml-2">Map view content</div>
+        <div *ngSwitchDefault class="ml-2">suca</div>
+    </div>
+   
+</ul>
+-->
+
+
+
+
+<!--Added to the dom, used form small element trees in an app
+<div [hidden]="courses.length == 0">
+List of Courses
+</div>
+
+<div [hidden]="courses.length>0">
+No courses yet
+</div>
+-->
+
+
+<!--Removed from the dom, used for large element trees in an app-->
+<!--<div *ngIf="courses.length >0; then coursesList else noCourses">
+     
+    </div>
+    <ng-template #coursesList>
+        List
+    </ng-template>
+        <ng-template #noCourses>
+            No courses yet
+        </ng-template> -->
