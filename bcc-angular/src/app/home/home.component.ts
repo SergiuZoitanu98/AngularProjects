@@ -9,7 +9,7 @@ import { AuthService } from "../_services/auth.service";
   styleUrls: ["./home.component.css"],
 })
 export class HomeComponent implements OnInit {
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
@@ -17,26 +17,29 @@ export class HomeComponent implements OnInit {
   }
 
   ping: string;
-  userPing:string;
+  userPing: string;
   adminPing: string;
 
   ngOnInit() {
 
     this.authService.ping().subscribe((response) => {
-      this.ping=response.toString()
+      this.ping = response.toString()
     });
 
     this.authService.userPing().subscribe((response) => {
-      this.userPing=response.toString()
+      this.userPing = response.toString()
     });
 
     this.authService.adminPing().subscribe((response) => {
-      this.adminPing=response.toString()
+      this.adminPing = response.toString()
     });
 
   }
 
-  logout(){
+  logout() {
     this.authService.logout()
   }
+
+  
+
 }

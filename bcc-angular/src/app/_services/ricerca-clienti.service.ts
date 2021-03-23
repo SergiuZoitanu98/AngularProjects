@@ -24,16 +24,16 @@ export class RicercaClientiService {
                     params: data
                 }
             )
-            .subscribe(
-                ((result) => {
-                    console.log(result)
-                })
-            );
+            
+            
     }
     getFiliali() {
         let url = this.url + "/api/v1/branch-search"
-        return this.http.get<any>(url).subscribe((result:[]) => {
-            console.log(result)
-        })
+        return this.http.get<any>(url);
+    }
+    conferma(conferma, id) {
+        let url = this.url + "/api/v1/customer-mark-as-edited"
+        this.http.post<any>(url, { id: id, confermato: conferma },)
+        console.log("confermato")
     }
 }
