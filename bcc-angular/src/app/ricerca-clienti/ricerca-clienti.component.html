@@ -46,18 +46,17 @@
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Utente confermato</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Cliente {{nome}} confermato</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body" >
-              
+              <h5>Codice Cliente : {{codice}}</h5>
           
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
               </div>
             </div>
           </div>
@@ -67,66 +66,195 @@
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Utente Non Confermato</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Cliente {{nome}} Non Confermato</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body"  >
-                
-                <ul>
-                  <li >  
+              
+              
+                  
                     <h5>Nag</h5>
                     {{nag}}
-                  </li>
-                  <li >  
+                  
+                   
                     <h5>Nome di Battesimo</h5>
                     {{nome}}
-                  </li>
-                  <li >  
+                
+                   
                     <h5>Data di Nascita</h5>
                     {{dataNascita}}
-                  </li>
-                  <li >  
+                 
                     <h5>Numero di telefono</h5>
-                    {{numeroTelefono}}
-                  </li>
-                  <li >  
+                    <div class="form-check form-check-wrapper">
+                      <input
+                        class="form-check-input "
+                        type="checkbox"
+                        id="telefono"
+                        name="telefono"
+                      />
+                      <label  class="form-check-label" htmlFor="telefono">
+                        <p >Telefono: {{numeroTelefono}}
+                       </p>
+                      </label>
+                      
+                      
+                    </div>
+                 
+                   
                     <h5>Email</h5>
-                    {{email}}
-                  </li>
+                 
+                    <div class="form-check form-check-wrapper">
+                      <input
+                        class="form-check-input "
+                        type="checkbox"
+                        id="email"
+                        name="email"
+
+                      />
+                      <label class="form-check-label" htmlFor="email">
+                        <p > {{email}}
+                       </p>
+                      </label>
+                      
+                    </div>
                   
                   
                   <h5>Privacy</h5>
-                  <li >  
-                    <p>p1{{privacy1}}</p>
-                  </li>
-                  <li >  
-                    <p>p2{{privacy2}}</p>
-                  </li>
-                  <li >  
-                    <p>p3 {{privacy3}}</p>
-                  </li>
-                  <li >  
-                    <p>p4{{privacy4}}</p>
-                  </li>
-                  <li >  
-                    <p>p5 {{privacy5}}</p>
-                  </li>
-                  <li >  
-                    <p>p6 {{privacy6}}</p>
-                  </li>
-                  <li >  
-                    <p>id {{id}}</p>
-                  </li>
-                </ul>
-               
-              </div>
+                  <div class="form-check form-check-wrapper">
+                    <input
+                      class="form-check-input "
+                      type="checkbox"
+                      id="privacy1"
+                      name="privacy1"
+
+                    />
+                    <label class="form-check-label" htmlFor="privacy1">
+                      <p *ngIf="privacy1 == true;else falso">privacy1:
+                     Si</p>
+                    </label>
+                    <ng-template #falso><p>privacy1: No</p></ng-template>
+                  </div>
+                
+                  <div class="form-check form-check-wrapper">
+                    <input
+                      class="form-check-input "
+                      type="checkbox"
+                      id="privacy2"
+                      name="privacy2"
+
+                    />
+                    <label class="form-check-label" htmlFor="privacy2">
+                      <p *ngIf="privacy2 == true;else falso">privacy2:
+                     Si</p>
+                    </label>
+                    <ng-template #falso><p>privacy2: No</p></ng-template>
+                  </div>
+
+                  <div class="form-check form-check-wrapper">
+                    <input
+                      class="form-check-input "
+                      type="checkbox"
+                      id="privacy3"
+                      name="privacy3"
+
+                    />
+                    <label class="form-check-label" htmlFor="privacy3">
+                      <p *ngIf="privacy3 == true;else falso">privacy3:
+                     Si</p>
+                    </label>
+                    <ng-template #falso><p>privacy3: No</p></ng-template>
+                
+                  </div>
+                  <div class="form-check form-check-wrapper">
+                    <input
+                      class="form-check-input "
+                      type="checkbox"
+                      id="privacy4"
+                      name="privacy4"
+
+                    />
+                    <label class="form-check-label" htmlFor="privacy4">
+                      <p *ngIf="privacy4 == true;else falso">privacy4:
+                     Si</p>
+                    </label>
+                    <ng-template #falso><p>privacy4: No</p></ng-template>
+                  </div>
+
+                  <div class="form-check form-check-wrapper">
+                    <input
+                      class="form-check-input "
+                      type="checkbox"
+                      id="privacy5"
+                      name="privacy5"
+
+                    />
+                    <label class="form-check-label" htmlFor="privacy5">
+                      <p *ngIf="privacy5 == true;else falso">privacy5:
+                     Si</p>
+                    </label>
+                    <ng-template #falso><p>privacy5: No</p></ng-template>
+                  </div>
+
+                  <div class="form-check form-check-wrapper">
+                    <input
+                      class="form-check-input "
+                      type="checkbox"
+                      id="privacy6"
+                      name="privacy6"
+
+                    />
+                    <label class="form-check-label" htmlFor="privacy6">
+                      <p *ngIf="privacy6 == true;else falsoo">privacy6:
+                     Si</p>
+                    </label>
+                    <ng-template #falsoo><p>privacy6: No</p></ng-template>
+                  </div>
+
+                  <div class="form-check form-check-wrapper">
+                    <input
+                      class="form-check-input "
+                      type="checkbox"
+                      id="firma"
+                      name="firma"
+
+                    />
+                    <label class="form-check-label" htmlFor="firma">
+                      <p *ngIf="firma == true;else falsooo">firma:
+                     Si</p>
+                    </label>
+                    <ng-template #falsooo><p>firma: No</p></ng-template>
+                  </div>
+                  
               
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" (click)="conferma()">Save changes</button>
+                </div>
+              
+              <div class="modal-footer" >
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal" data-target="#exampleModal2">Conferma</button>
               </div>
             </div>
           </div>
         </div>
+        <!-- Modal -->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-zoom modal-sm" role="document">
+      <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Attenzione</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+        Sei sicuro di voler confermare?
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#nonConfermato" data-dismiss="modal">Annulla</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="conferma()">Conferma</button>
+      </div>
+    </div>
+  </div>
+</div>
