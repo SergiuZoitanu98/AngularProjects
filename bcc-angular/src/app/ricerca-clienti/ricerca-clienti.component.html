@@ -249,11 +249,11 @@
       </div>
       <div class="modal-body" >
         Sei sicuro di voler confermare?
-        
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#nonConfermato" data-dismiss="modal">Annulla</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="conferma()">Conferma</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#confermato" (click)="conferma()">Conferma</button>
       </div>
     </div>
   </div>
