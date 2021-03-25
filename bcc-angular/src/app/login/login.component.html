@@ -13,7 +13,14 @@
           aria-label="Username"
           aria-describedby="basic-addon1"
           [(ngModel)]="credentials.username"
+          required
+          ngModel
+          name="username"
+          #username="ngModel"
         />
+        <div class="alert alert-danger" *ngIf="username.touched && !username.valid">
+          <div *ngIf="username.errors.required">Username is required</div>
+        </div>
       </div>
       <div class="col-4"></div>
     </div>
@@ -28,8 +35,15 @@
           aria-label="Password"
           aria-describedby="basic-addon1"
           [(ngModel)]="credentials.password"
+          required
+          ngModel
+          name="password"
+          #password="ngModel"
         />
-      </div>
+        <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+          <div *ngIf="password.errors.required">Password is required</div>
+        </div>
+    
       <div class="col-4"></div>
     </div>
     <br />

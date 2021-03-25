@@ -1,8 +1,10 @@
-import { HttpClient,HttpParams } from "@angular/common/http";
+import { HttpClient,HttpErrorResponse,HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { environment } from "src/environments/environment";
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { Router } from "@angular/router";
+import { throwError } from "rxjs";
+
 
 @Injectable({
     providedIn: "root",
@@ -12,7 +14,21 @@ export class RicercaClientiService {
     jwtHelper: JwtHelperService = new JwtHelperService();
 
     constructor(private http: HttpClient, private router: Router) { }
-  
+    private handleError(error: HttpErrorResponse) {
+        if (error.error instanceof ErrorEvent) {
+          // A client-side or network error occurred. Handle it accordingly.
+          console.error('An error occurred:', error.error.message);
+        } else {
+          // The backend returned an unsuccessful response code.
+          // The response body may contain clues as to what went wrong.
+          console.error(
+            `Backend returned code ${error.status}, ` +
+            `body was: ${error.error}`);
+        }
+        // Return an observable with a user-facing error message.
+        return throwError(
+          'Something bad happened; please try again later.');
+      }
     get token() {
         return sessionStorage.getItem("token");
     }
@@ -24,9 +40,12 @@ export class RicercaClientiService {
                     params: data
                 }
             )
-            
-            
     }
+
+    getClients(clients) {
+    return console.log( "clients", clients)
+}
+
     getFiliali() {
         let url = this.url + "/api/v1/branch-search"
         return this.http.get<any>(url);
@@ -44,15 +63,12 @@ export class RicercaClientiService {
             p6: p6,
             firma: firma
         }
-       
         let url = this.url + "/api/v1/customer-mark-as-edited";
-        return this.http.post<any>(url,data
-            
-        , {
-            headers: {
-                "Content-type": "application/json",
-            }
-        })
-
-    }
+        return this.http.post<any>(url, data,
+            {
+                headers: {
+                    "Content-type": "application/json",
+                }
+            })
+    } 
 }
