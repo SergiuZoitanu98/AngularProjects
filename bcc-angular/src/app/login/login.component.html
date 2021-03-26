@@ -9,6 +9,11 @@
               src="https://lh3.googleusercontent.com/proxy/wacIo3R8FcbEWwO-iu6-bosjKIku5vDK4tg-rK3t48eziesZX0Tn4_h0U2zSUErcOouaV_VHZwg38j6wKqiF-iaMTGgSgl_WIuWNmGbkH3ls_VyEwNomBOZsQvksct5MNk6foWf1YU5f-K9cRvlb_GA5veDMIZOm"
               alt=""
             />
+            <div *ngIf="loginError">
+              <div class="container">
+                <p class="text-center">{{ loginErrorMessage }}</p>
+              </div>
+            </div>
           </div>
           <form class="form-signin">
             <div class="form-group">
@@ -52,6 +57,7 @@
               class="btn btn-lg btn-dark btn-block text-uppercase mt-4"
               type="button"
               (click)="login()"
+              [disabled]="!username.valid || !password.valid"
             >
               Login
             </button>

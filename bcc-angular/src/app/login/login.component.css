@@ -14,7 +14,7 @@
   padding: 2rem;
 }
 .card-body {
-  height: 450px;
+  height: 590px;
 }
 .form-signin {
   width: 100%;
@@ -83,4 +83,7 @@
   .form-label-group input:-ms-input-placeholder {
     color: #777;
   }
+}
+p {
+  color: red;
 }
