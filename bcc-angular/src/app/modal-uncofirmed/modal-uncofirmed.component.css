@@ -1,0 +1,20 @@
+.checkBox {
+  margin-top: 5px;
+  margin-left: 4%;
+}
+.form-check-wrapper input {
+  order: 2;
+}
+.form-check-wrapper label {
+  order: 1;
+}
+.form-check-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+}
+.form-check-input {
+  position: relative;
+}

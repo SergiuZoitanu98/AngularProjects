@@ -1,0 +1,63 @@
+<!--Userform-->
+<form action="" class="form-group">
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col-2">
+        <select
+          name=""
+          id=""
+          class="form-control"
+          [(ngModel)]="filiali.id"
+          name="branch"
+        >
+          <option value="" disabled selected>Seleziona Filiale</option>
+          <option *ngFor="let b of branches" [value]="b.id">
+            {{ b.nome }}
+          </option>
+        </select>
+      </div>
+
+      <div class="col-2">
+        <input
+          type="text"
+          required
+          ngModel
+          name="nag"
+          [(ngModel)]="clienti.nag"
+          #nag="ngModel"
+          placeholder="NAG"
+          class="form-control ml-4"
+        />
+      </div>
+      <div class="col-2">
+        <input
+          type="text"
+          [(ngModel)]="clienti.nome"
+          name="nome"
+          placeholder="Nome"
+          class="form-control ml-4"
+        />
+      </div>
+      <div class="col-2">
+        <input
+          type="date"
+          [(ngModel)]="clienti.dataNascita"
+          name="dataNascita"
+          placeholder="Data Di Nascita"
+          class="form-control ml-4"
+        />
+      </div>
+      <div class="col-2">
+        <button
+          class="btn btn-primary"
+          [disabled]="!nag.valid"
+          (click)="findClients()"
+        >
+          Cerca Clienti
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+<usertable [clients]="clients"></usertable>
+<!--Userform-->

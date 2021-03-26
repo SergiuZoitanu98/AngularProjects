@@ -11,6 +11,10 @@ import { JwtInterceptor } from "./_interceptors/jwt.interceptor";
 import { RicercaClientiComponent } from "./ricerca-clienti/ricerca-clienti.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { RicercaClientiService } from "./_services/ricerca-clienti.service";
+import { UserformComponent } from "./userform/userform.component";
+import { UserTableComponent } from "./user-table/user-table.component";
+import { ModalConfirmedComponent } from "./modal-confirmed/modal-confirmed.component";
+import { ModalUncofirmedComponent } from "./modal-uncofirmed/modal-uncofirmed.component";
 
 @NgModule({
   declarations: [
@@ -19,6 +23,10 @@ import { RicercaClientiService } from "./_services/ricerca-clienti.service";
     HomeComponent,
     RicercaClientiComponent,
     NavbarComponent,
+    UserformComponent,
+    UserTableComponent,
+    ModalConfirmedComponent,
+    ModalUncofirmedComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +38,7 @@ import { RicercaClientiService } from "./_services/ricerca-clienti.service";
   providers: [
     AuthGuardService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+
     { provide: RicercaClientiService, useClass: RicercaClientiService },
   ],
 
