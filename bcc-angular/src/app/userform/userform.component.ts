@@ -8,7 +8,9 @@ import { RicercaClientiService } from "../_services/ricerca-clienti.service";
 })
 export class UserformComponent implements OnInit {
   constructor(private clientService: RicercaClientiService) {}
-
+  oggetto: {};
+  message: string;
+  errore: boolean;
   branches: {};
   clients;
   clienti: {
@@ -44,7 +46,8 @@ export class UserformComponent implements OnInit {
     const params = new HttpParams()
       .set("nag", this.clienti.nag)
       .set("branch", this.filiali.id)
-      .set("nome", this.clienti.nome);
+      .set("nome", this.clienti.nome)
+      .set("dataNascita", this.clienti.dataNascita);
     this.clientService.cerca(params).subscribe((res) => {
       let array = [];
       for (let key in res) {
@@ -52,7 +55,14 @@ export class UserformComponent implements OnInit {
           array.push(res[key]);
         }
       }
-      this.clients = array;
+
+      if (typeof array !== "undefined" && array.length > 0) {
+        this.errore = false;
+        this.clients = array;
+      } else {
+        this.errore = true;
+        this.message = "Non esiste alcuna corrispondenza con i dati inseriti.";
+      }
     });
   }
 }

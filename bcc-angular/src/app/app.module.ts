@@ -15,6 +15,7 @@ import { UserformComponent } from "./userform/userform.component";
 import { UserTableComponent } from "./user-table/user-table.component";
 import { ModalConfirmedComponent } from "./modal-confirmed/modal-confirmed.component";
 import { ModalUncofirmedComponent } from "./modal-uncofirmed/modal-uncofirmed.component";
+import { PaginatorComponent } from './paginator/paginator.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ModalUncofirmedComponent } from "./modal-uncofirmed/modal-uncofirmed.co
     UserTableComponent,
     ModalConfirmedComponent,
     ModalUncofirmedComponent,
+    PaginatorComponent,
   ],
   imports: [
     BrowserModule,
