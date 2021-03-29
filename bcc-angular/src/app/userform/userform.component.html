@@ -46,7 +46,7 @@
           [(ngModel)]="clienti.dataNascita"
           name="dataNascita"
           class="form-control ml-4"
-          [disabled]="!nome.valid"
+          [disabled]="(!nome.valid && nag.valid) || !nag.valid"
         />
       </div>
       <div class="col-2">
