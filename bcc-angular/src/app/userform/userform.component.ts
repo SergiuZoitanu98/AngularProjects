@@ -8,7 +8,7 @@ import { RicercaClientiService } from "../_services/ricerca-clienti.service";
 })
 export class UserformComponent implements OnInit {
   constructor(private clientService: RicercaClientiService) {}
-  oggetto: {};
+
   message: string;
   errore: boolean;
   branches: {};
@@ -55,7 +55,10 @@ export class UserformComponent implements OnInit {
           array.push(res[key]);
         }
       }
-
+      for (let i in array) {
+        let date2 = new Date(array[i].dataNascita);
+        array[i].dataNascita = date2.toLocaleDateString();
+      }
       if (typeof array !== "undefined" && array.length > 0) {
         this.errore = false;
         this.clients = array;

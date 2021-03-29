@@ -15,11 +15,20 @@
 }
 .card-body {
   height: 590px;
+  background-color: white;
 }
 .form-signin {
   width: 100%;
 }
-
+.btn-primary {
+  color: #fff;
+  background-color: #233b9d;
+  border-color: #233b9d;
+}
+.btn-primary:hover {
+  background-color: #233b9d;
+  border-color: #233b9d;
+}
 .form-signin .btn {
   font-size: 80%;
   border-radius: 5rem;
@@ -84,6 +93,6 @@
     color: #777;
   }
 }
-p {
+.p-class {
   color: red;
 }

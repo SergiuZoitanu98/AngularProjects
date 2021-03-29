@@ -8,6 +8,7 @@ import { RicercaClientiService } from "../_services/ricerca-clienti.service";
 export class UserTableComponent implements OnInit {
   constructor(private clientService: RicercaClientiService) {}
   @Input() clients: {};
+  p: number = 1;
   array: [];
   nome;
   id;
@@ -34,6 +35,7 @@ export class UserTableComponent implements OnInit {
         array.push(c[key]);
       }
     }
+
     this.id = c.id;
     this.nome = c.nome;
     this.email = c.email;
@@ -48,6 +50,7 @@ export class UserTableComponent implements OnInit {
     this.privacy6 = c.p6;
     this.firma = c.firma;
     this.codice = c.codice;
+    this.confermato = c.confermato;
   }
 
   conferma() {
@@ -64,6 +67,7 @@ export class UserTableComponent implements OnInit {
         this.privacy6,
         this.firma
       )
+
       .subscribe((res) => {});
   }
 }

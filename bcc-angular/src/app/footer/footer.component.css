@@ -1,0 +1,16 @@
+.footer {
+  background-color: #36955b;
+  width: 100%;
+  color: #233b9d;
+  height: 150px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 10px 0;
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  float: none;
+}
+h4 {
+  color: #233b9d;
+}

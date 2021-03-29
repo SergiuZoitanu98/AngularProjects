@@ -8,13 +8,17 @@
       <tr>
         <th scope="col">CAB</th>
         <th scope="col">NAG</th>
-        <th scope="col">Nome</th>
-        <th scope="col">Data</th>
+        <th scope="col">Nome di Battesimo</th>
+        <th scope="col">Data di Nascita</th>
         <th scope="col">Dettagli</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let c of clients">
+      <tr
+        *ngFor="
+          let c of clients | paginate: { itemsPerPage: 5, currentPage: p }
+        "
+      >
         <th scope="row">{{ c.cab }}</th>
         <td>{{ c.nag }}</td>
         <td>{{ c.nome }}</td>
@@ -108,6 +112,7 @@
               >
                 Annulla
               </button>
+
               <button
                 type="button"
                 class="btn btn-dark"
@@ -123,7 +128,6 @@
         </div>
       </div>
     </tbody>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </table>
-
-  <paginator></paginator>
 </div>

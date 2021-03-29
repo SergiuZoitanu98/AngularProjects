@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from "@angular/core";
-
 @Component({
   selector: "modal-confirmed",
   templateUrl: "./modal-confirmed.component.html",

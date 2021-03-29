@@ -15,7 +15,8 @@ import { UserformComponent } from "./userform/userform.component";
 import { UserTableComponent } from "./user-table/user-table.component";
 import { ModalConfirmedComponent } from "./modal-confirmed/modal-confirmed.component";
 import { ModalUncofirmedComponent } from "./modal-uncofirmed/modal-uncofirmed.component";
-import { PaginatorComponent } from './paginator/paginator.component';
+import { NgxPaginationModule } from "ngx-pagination";
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { PaginatorComponent } from './paginator/paginator.component';
     UserTableComponent,
     ModalConfirmedComponent,
     ModalUncofirmedComponent,
-    PaginatorComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +37,7 @@ import { PaginatorComponent } from './paginator/paginator.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxPaginationModule,
   ],
   providers: [
     AuthGuardService,

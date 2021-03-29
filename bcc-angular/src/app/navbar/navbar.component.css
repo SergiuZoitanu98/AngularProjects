@@ -1,5 +1,5 @@
 h4 {
-  color: white;
+  color: #233b9d;
 }
 .pointer {
   cursor: pointer;
@@ -7,4 +7,7 @@ h4 {
 }
 .material-icons {
   color: white;
+}
+.bg-dark {
+  background-color: #36955b !important;
 }

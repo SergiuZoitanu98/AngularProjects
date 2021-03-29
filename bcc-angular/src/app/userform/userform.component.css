@@ -1,1 +1,12 @@
-
+.btn-primary {
+  color: #fff;
+  background-color: #233b9d;
+  border-color: #233b9d;
+}
+.btn-primary:hover {
+  background-color: #233b9d;
+  border-color: #233b9d;
+}
+.p-error {
+  color: #233b9d;
+}

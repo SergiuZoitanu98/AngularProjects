@@ -21,7 +21,6 @@
         <input
           type="text"
           required
-          ngModel
           name="nag"
           [(ngModel)]="clienti.nag"
           #nag="ngModel"
@@ -34,8 +33,11 @@
           type="text"
           [(ngModel)]="clienti.nome"
           name="nome"
+          required
           placeholder="Nome"
           class="form-control ml-4"
+          #nome="ngModel"
+          [disabled]="!nag.valid"
         />
       </div>
       <div class="col-3">
@@ -43,13 +45,13 @@
           type="date"
           [(ngModel)]="clienti.dataNascita"
           name="dataNascita"
-          placeholder="Data Di Nascita"
           class="form-control ml-4"
+          [disabled]="!nome.valid"
         />
       </div>
       <div class="col-2">
         <button
-          class="btn btn-dark ml-2"
+          class="btn btn-primary ml-2"
           [disabled]="!nag.valid"
           (click)="findClients()"
         >
@@ -61,7 +63,7 @@
 </form>
 <div *ngIf="errore">
   <div class="container">
-    <p class="text-center">{{ message }}</p>
+    <p class="text-center p-error">{{ message }}</p>
   </div>
 </div>
 <div *ngIf="!errore">
