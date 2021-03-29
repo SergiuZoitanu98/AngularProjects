@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { RicercaClientiService } from "../_services/ricerca-clienti.service";
 @Component({
   selector: "usertable",
@@ -9,7 +9,7 @@ export class UserTableComponent implements OnInit {
   constructor(private clientService: RicercaClientiService) {}
   @Input() clients: {};
   p: number = 1;
-  array: [];
+  confirmed: boolean;
   nome;
   id;
   email;
@@ -67,7 +67,6 @@ export class UserTableComponent implements OnInit {
         this.privacy6,
         this.firma
       )
-
-      .subscribe((res) => {});
+      .subscribe();
   }
 }

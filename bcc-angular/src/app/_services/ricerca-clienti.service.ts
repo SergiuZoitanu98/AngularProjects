@@ -23,10 +23,6 @@ export class RicercaClientiService {
     });
   }
 
-  getClients(clients) {
-    return console.log("clients", clients);
-  }
-
   getFiliali() {
     let url = this.url + "/api/v1/branch-search";
     return this.http.get<any>(url);

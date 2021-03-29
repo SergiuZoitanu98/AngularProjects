@@ -8,7 +8,10 @@ import { RicercaClientiService } from "../_services/ricerca-clienti.service";
 })
 export class UserformComponent implements OnInit {
   constructor(private clientService: RicercaClientiService) {}
-
+  newDate: Date;
+  client: {
+    confermato;
+  };
   message: string;
   errore: boolean;
   branches: {};
@@ -43,11 +46,20 @@ export class UserformComponent implements OnInit {
     };
   }
   findClients() {
+    this.newDate = new Date(this.clienti.dataNascita);
+    this.clienti.dataNascita =
+      this.newDate.getFullYear() +
+      "/" +
+      (this.newDate.getMonth() + 1) +
+      "/" +
+      this.newDate.getDate();
+
     const params = new HttpParams()
       .set("nag", this.clienti.nag)
       .set("branch", this.filiali.id)
-      .set("nome", this.clienti.nome)
-      .set("dataNascita", this.clienti.dataNascita);
+      .set("customerName", this.clienti.nome);
+    //.set("birthDate", this.clienti.dataNascita);
+
     this.clientService.cerca(params).subscribe((res) => {
       let array = [];
       for (let key in res) {
@@ -67,5 +79,7 @@ export class UserformComponent implements OnInit {
         this.message = "Non esiste alcuna corrispondenza con i dati inseriti.";
       }
     });
+
+    console.log(typeof this.clienti.dataNascita);
   }
 }
