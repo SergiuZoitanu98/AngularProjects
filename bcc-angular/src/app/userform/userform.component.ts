@@ -38,7 +38,7 @@ export class UserformComponent implements OnInit {
     this.clienti = {
       nag: "",
       nome: "",
-      dataNascita: "",
+      dataNascita: null,
     };
     this.filiali = {
       id: "",
@@ -53,34 +53,32 @@ export class UserformComponent implements OnInit {
       (this.newDate.getMonth() + 1) +
       "/" +
       this.newDate.getDate();
-    if (this.clienti.dataNascita != null) {
-      const params = new HttpParams()
-        .set("nag", this.clienti.nag)
-        .set("branch", this.filiali.id)
-        .set("customerName", this.clienti.nome);
-      // .set("birthDate", this.clienti.dataNascita);
 
-      this.clientService.cerca(params).subscribe((res) => {
-        let array = [];
-        for (let key in res) {
-          if (res.hasOwnProperty(key)) {
-            array.push(res[key]);
-          }
+    const params = new HttpParams()
+      .set("nag", this.clienti.nag)
+      .set("branch", this.filiali.id)
+      .set("customerName", this.clienti.nome);
+    // .set("birthDate", this.clienti.dataNascita);
+
+    this.clientService.cerca(params).subscribe((res) => {
+      let array = [];
+      for (let key in res) {
+        if (res.hasOwnProperty(key)) {
+          array.push(res[key]);
         }
-        for (let i in array) {
-          let date2 = new Date(array[i].dataNascita);
-          array[i].dataNascita = date2.toLocaleDateString();
-        }
-        if (typeof array !== "undefined" && array.length > 0) {
-          this.errore = false;
-          this.clients = array;
-        } else {
-          this.errore = true;
-          this.message =
-            "Non esiste alcuna corrispondenza con i dati inseriti.";
-        }
-      });
-    }
+      }
+      for (let i in array) {
+        let date2 = new Date(array[i].dataNascita);
+        array[i].dataNascita = date2.toLocaleDateString();
+      }
+      if (typeof array !== "undefined" && array.length > 0) {
+        this.errore = false;
+        this.clients = array;
+      } else {
+        this.errore = true;
+        this.message = "Non esiste alcuna corrispondenza con i dati inseriti.";
+      }
+    });
 
     console.log(typeof this.clienti.dataNascita);
   }

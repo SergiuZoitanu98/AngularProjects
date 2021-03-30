@@ -1,6 +1,11 @@
 .pointer {
   cursor: pointer;
 }
-th {
+
+thead {
+  background: #233b9d;
+  color: white;
+}
+.material-icons {
   color: #233b9d;
 }

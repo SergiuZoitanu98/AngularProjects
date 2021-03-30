@@ -51,9 +51,15 @@ export class UserTableComponent implements OnInit {
     this.firma = c.firma;
     this.codice = c.codice;
     this.confermato = c.confermato;
+    this.setConfermato();
+  }
+  setConfermato() {
+    this.confermato = true;
+    console.log(this.confermato);
   }
 
   conferma() {
+    this.confermato;
     this.clientService
       .conferma(
         this.id,

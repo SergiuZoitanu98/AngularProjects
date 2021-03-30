@@ -1,7 +1,7 @@
 .footer {
-  background-color: #36955b;
+  background-color: #233b9d;
   width: 100%;
-  color: #233b9d;
+
   height: 150px;
   margin: 0 auto;
   overflow: hidden;
@@ -12,5 +12,5 @@
   float: none;
 }
 h4 {
-  color: #233b9d;
+  color: white;
 }

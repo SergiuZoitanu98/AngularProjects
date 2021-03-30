@@ -1,72 +1,93 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-      <div class="card card-signin my-5">
-        <div class="card-body align-content-center">
-          <div class="login-icon text-center">
-            <img
-              height="200px"
-              src="https://www.senigallianotizie.it/articoli/2015/02/logo-bcc.jpg?badd6b"
-              alt=""
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+<div class="container h-100">
+  <div class="d-flex justify-content-center h-100">
+    <div class="user_card">
+      <div class="d-flex justify-content-center">
+        <div class="brand_logo_container">
+          <img
+            src="https://www.friulionline.com/wp-content/uploads/2016/08/logo-bcc.jpg"
+            class="brand_logo"
+            alt="Logo"
+          />
+        </div>
+      </div>
+      <div class="d-flex justify-content-center form_container">
+        <form>
+          <div class="input-group mb-3">
+            <div class="input-group-append">
+              <span class="input-group-text material-icons"
+                >person_outline</span
+              >
+            </div>
+            <input
+              class="form-control input_user"
+              type="text"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+              [(ngModel)]="credentials.username"
+              required
+              ngModel
+              name="username"
+              #username="ngModel"
+              aria-current=""
+              placeholder="Username"
             />
-            <div *ngIf="loginError">
-              <div class="container">
-                <p class="text-center p-class">{{ loginErrorMessage }}</p>
-              </div>
+          </div>
+          <div class="input-group mb-2">
+            <div class="input-group-append">
+              <span class="input-group-text material-icons">lock_open </span>
+            </div>
+            <input
+              type="password"
+              id="inputPassword"
+              aria-label="Password"
+              aria-describedby="basic-addon1"
+              [(ngModel)]="credentials.password"
+              required
+              ngModel
+              placeholder="Password"
+              name="password"
+              #password="ngModel"
+              aria-current=""
+              class="form-control input_pass"
+            />
+          </div>
+          <div class="form-group">
+            <div class="custom-control custom-checkbox">
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="customControlInline"
+              />
+              <label class="custom-control-label" for="customControlInline"
+                >Remember me</label
+              >
             </div>
           </div>
-          <form class="form-signin">
-            <div class="form-group">
-              <input
-                type="email"
-                id="inputEmail"
-                placeholder="Email address"
-                type="text"
-                class="form-control"
-                placeholder="Username"
-                aria-label="Username"
-                aria-describedby="basic-addon1"
-                [(ngModel)]="credentials.username"
-                required
-                ngModel
-                name="username"
-                #username="ngModel"
-                aria-current=""
-              />
-            </div>
-
-            <div class="form-group">
-              <input
-                type="password"
-                id="inputPassword"
-                class="form-control mt-4"
-                placeholder="Password"
-                required
-                type="password"
-                placeholder="Password"
-                aria-label="Password"
-                aria-describedby="basic-addon1"
-                [(ngModel)]="credentials.password"
-                required
-                ngModel
-                name="password"
-                #password="ngModel"
-                aria-current=""
-              />
-            </div>
-
+          <div class="d-flex justify-content-center mt-3 login_container">
             <button
-              class="btn btn-lg btn-primary btn-block text-uppercase mt-4"
               type="button"
               (click)="login()"
               [disabled]="!username.valid || !password.valid"
+              class="btn login_btn"
             >
               Login
             </button>
-          </form>
+          </div>
+        </form>
+      </div>
+
+      <div class="mt-4">
+        <div class="d-flex justify-content-center links">
+          Don't have an account? <a href="#" class="ml-2">Sign Up</a>
+        </div>
+        <div class="d-flex justify-content-center links">
+          <a href="#">Forgot your password?</a>
         </div>
       </div>
     </div>
   </div>
-  <footer></footer>
 </div>
