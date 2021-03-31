@@ -9,3 +9,18 @@ thead {
 .material-icons {
   color: #233b9d;
 }
+
+.modal-header {
+  background-color: #233b9d;
+  color: white;
+}
+
+.pointer {
+  cursor: pointer;
+}
+.material-icons-custom {
+  color: white;
+}
+.span {
+  color: white;
+}

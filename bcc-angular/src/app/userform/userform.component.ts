@@ -58,7 +58,6 @@ export class UserformComponent implements OnInit {
       .set("nag", this.clienti.nag)
       .set("branch", this.filiali.id)
       .set("customerName", this.clienti.nome);
-    // .set("birthDate", this.clienti.dataNascita);
 
     this.clientService.cerca(params).subscribe((res) => {
       let array = [];

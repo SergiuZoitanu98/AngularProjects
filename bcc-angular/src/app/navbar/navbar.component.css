@@ -90,3 +90,6 @@
 .pointer {
   cursor: pointer;
 }
+img {
+  border: 4px solid #233b9d;
+}

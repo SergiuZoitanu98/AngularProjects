@@ -9,28 +9,33 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">
+        <h5 class="modal-title h5" id="exampleModalLongTitle">
           Nome Cliente - {{ nome }}
         </h5>
 
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
+        <label
+          data-toggle="tooltip"
+          data-placement="right"
+          title="Chiudi"
+          class="ml-2"
         >
-          <span aria-hidden="true">&times;</span>
-        </button>
+          <span
+            data-dismiss="modal"
+            class="material-icons pointer material-icons-custom span"
+          >
+            clear
+          </span></label
+        >
       </div>
       <div class="modal-body">
         <h5>Nag</h5>
-        {{ nag }}
+        <p class="p">{{ nag }}</p>
 
         <h5>Nome di Battesimo</h5>
-        {{ nome }}
+        <p class="p">{{ nome }}</p>
 
         <h5>Data di Nascita</h5>
-        {{ dataNascita }}
+        <p class="p">{{ dataNascita }}</p>
 
         <h5>Numero di telefono</h5>
         <div class="form-check form-check-wrapper">
@@ -41,8 +46,11 @@
             name="telefono"
           />
           <label class="form-check-label" htmlFor="telefono">
-            <p>Telefono: {{ numeroTelefono }}</p>
+            <p *ngIf="telefono != null; else fa">{{ numeroTelefono }}</p>
           </label>
+          <ng-template #fa
+            ><span class="material-icons"> clear </span></ng-template
+          >
         </div>
 
         <h5>Email</h5>
@@ -55,8 +63,11 @@
             name="email"
           />
           <label class="form-check-label" htmlFor="email">
-            <p>{{ email }}</p>
+            <p *ngIf="email == true; else f">{{ email }}</p>
           </label>
+          <ng-template #f
+            ><span class="material-icons"> clear </span></ng-template
+          >
         </div>
 
         <h5>Privacy</h5>

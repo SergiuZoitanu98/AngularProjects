@@ -1,20 +1,44 @@
 .checkBox {
   margin-top: 5px;
-  margin-left: 4%;
+  margin-left: 2%;
 }
 .form-check-wrapper input {
   order: 2;
 }
 .form-check-wrapper label {
-  order: 1;
 }
 .form-check-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0;
+  padding-right: 70px;
 }
 .form-check-input {
   position: relative;
+}
+
+.modal-header {
+  background-color: #233b9d;
+  color: white;
+}
+
+.pointer {
+  cursor: pointer;
+}
+.material-icons-custom {
+  color: white;
+}
+.span {
+  color: white;
+}
+h5 {
+  color: #233b9d;
+  margin-left: 20px;
+}
+.h5 {
+  color: white;
+}
+.p {
+  margin-left: 20px;
 }

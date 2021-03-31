@@ -1,0 +1,22 @@
+.modal-header {
+  background-color: #233b9d;
+  color: white;
+
+  height: 80px;
+}
+span {
+  color: white;
+}
+.pointer {
+  cursor: pointer;
+}
+.modal-footer {
+  height: 80px;
+}
+
+.modal-body {
+  height: 150px;
+}
+.material-icons {
+  color: white;
+}
